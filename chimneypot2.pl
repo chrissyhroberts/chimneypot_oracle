@@ -29,6 +29,6 @@ $port->baudrate(9600);
 #system("/home/pi/lights_on");
 my $count=0;
 
-$first_name=$ARGV[0];
+my $first_name=$ARGV[0];
 #system ('sudo shutdown 3 &');
 $port->write("$first_name");
