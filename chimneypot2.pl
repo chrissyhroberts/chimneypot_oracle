@@ -1,22 +1,10 @@
 #!/usr/bin/perl -w
 
-use strict;
 use warnings;
 use open qw(:std :utf8);
-use LWP::Simple;
-#use YAML::Tiny;
-use JSON;
-use URI;
-use utf8;
-use YAML;
-use XML::RSSLite;
 use strict;
 use Device::SerialPort;
-use Net::Google::Calendar;
-use Time::Stamp 'gmstamp';
-use Time::HiRes qw(gettimeofday);
-use Mail::IMAPClient;
-use IO::Socket::SSL; 
+
 
 our $first_name=$ARGV[0];
 

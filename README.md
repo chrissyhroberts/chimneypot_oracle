@@ -67,3 +67,8 @@ To exit Minicom press “CTRL-A”, then “X” and finally press “Return” 
 ### Install chimneypot scripts
 	sudo apt install git
 	git clone https://github.com/chrissyhroberts/chimneypot_oracle.git
+
+To make perl work, need some packages and cpanminus installer
+
+	curl -L https://cpanmin.us | perl - --sudo App::cpanminus
+	
