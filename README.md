@@ -71,4 +71,5 @@ To exit Minicom press “CTRL-A”, then “X” and finally press “Return” 
 To make perl work, need some packages and cpanminus installer
 
 	curl -L https://cpanmin.us | perl - --sudo App::cpanminus
+	sudo cpanm install Device::SerialPort
 	
