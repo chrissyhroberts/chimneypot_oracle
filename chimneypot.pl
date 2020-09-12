@@ -61,12 +61,13 @@ if ($random_number =~/[6-7]/) {&astronomy_news};
 if ($random_number =~/[8]/) {&onthisday};
 if ($random_number==2){&calendar};
 if ($random_number==1){&clock};
-if ($random_number==3){&gmail};
+#if ($random_number==3){&gmail};
 if ($random_number==9){$count--};
 if ($random_number==2){$count--};
 }
 &randomnumberfrom3;
 }
+
 ####################
 sub astronomy_news
 {
