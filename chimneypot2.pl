@@ -17,6 +17,9 @@ use Time::Stamp 'gmstamp';
 use Time::HiRes qw(gettimeofday);
 use Mail::IMAPClient;
 use IO::Socket::SSL; 
+
+our $first_name=$ARGV[0];
+
 #activate serial port for pi-lite function
 #system ("./poo &");
 #open OUTPUT, ">output.txt" or die $!;
@@ -29,6 +32,5 @@ $port->baudrate(9600);
 #system("/home/pi/lights_on");
 my $count=0;
 
-my $first_name=$ARGV[0];
 #system ('sudo shutdown 3 &');
 $port->write("$first_name");
