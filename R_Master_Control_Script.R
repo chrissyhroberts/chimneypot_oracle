@@ -4,6 +4,15 @@
 library(feedeR)
 
 
+
+#define any text
+printthis<-function(message){system(paste("python anytext.py ",message,sep=""))}
+#MAIN
+
+printthis("The_Chimneypot_Oracle_Speaks_AGAIN!!")
+printthis("Updating_the_news...Please_wait...")
+
+
 # define a function that gets feeds
 getfeed<-function(url)
   {
@@ -58,14 +67,6 @@ system(paste("python anytext.py '",a[1],"'",sep=""))
 
 
 b=1
-
-
-#define any text
-printthis<-function(message){system(paste("python anytext.py ",message,sep=""))}
-#MAIN
-
-printthis("The_Chimneypot_Oracle_Speaks_AGAIN!!")
-printthis("Updating_the_news...Please_wait...")
 
 
 mes1<-
