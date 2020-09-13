@@ -17,13 +17,14 @@ getfeed<-function(url)
 getweather <-function()
   {
   a<-getfeed("https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/2643490")
+  a<-sample(a,1)
   for(i in 1:length(a)){system(paste("python anytext.py '",a[1],"'",sep=""))}
   }
 
 # define a function that gets the weather and prints to Rpi
 gettime <-function()
 {
-  a<-format(Sys.time(), "%a %b %d, %Y - %X")
+  a<-format(Sys.time(), "%a %b %d, %Y - %H:%M")
 
   system(paste("python anytext.py '",a[1],"'",sep=""))
 }
@@ -33,9 +34,18 @@ gettime <-function()
 
 getnews <- function()
 {
-a<-c(a,getfeed("http://journal.r-project.org/rss.atom"))
+a<-c(getfeed("http://news.bbc.co.uk/rss/on_this_day/front_page/rss.xml"))
+a<-c(a,getfeed("http://feeds.bbci.co.uk/news/video_and_audio/news_front_page/rss.xml?edition=uk#"))
+a<-c(a,getfeed("http://feeds.bbci.co.uk/news/world/rss.xml"))
+a<-c(a,getfeed("http://feeds.bbci.co.uk/news/science_and_environment/rss.xml#"))
+a<-c(a,getfeed("http://feeds.bbci.co.uk/news/education/rss.xml"))
+a<-c(a,getfeed("http://feeds.bbci.co.uk/news/health/rss.xml"))
+a<-c(a,getfeed("http://feeds.bbci.co.uk/news/politics/rss.xml"))
+a<-c(a,getfeed("http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml"))
+
 a <- sample(a,size = 3)
-system(paste("python anytext.py '",a[1],"'",sep=""))
+return (a)
+#system(paste("python anytext.py '",a[1],"'",sep=""))
 }
 
 b=1
