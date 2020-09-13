@@ -61,7 +61,7 @@ todaysnews<-getnews()
 printnews<-function()
 {
 aa<-sample(todaysnews,size = 1)
-system(paste("python anytext.py '",a[1],"'",sep=""))
+system(paste("python anytext.py '",aa[1],"'",sep=""))
 }
 
 printthis("Updating_the_news...Please_wait...")
@@ -69,10 +69,17 @@ printthis("Updating_the_news...Please_wait...")
 
 b=1
 
-
+j=1
 mes1<-
 while(b==1)
 {
+if(j==60){
+  printthis("Updating_the_news...Please_wait...")
+  todaysnews<-getnews()
+  j=1
+  }
+j=j+1
+print(j)
 gettime()
 getweather()
 printnews()
