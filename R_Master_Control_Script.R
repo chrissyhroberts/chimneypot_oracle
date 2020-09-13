@@ -47,7 +47,7 @@ a<-c(a,getfeed("http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml"))
 
 a <- sample(a,size = 3)
 return (a)
-#system(paste("python anytext.py '",a[1],"'",sep=""))
+system(paste("python anytext.py '",a[1],"'",sep=""))
 }
 
 b=1
