@@ -104,7 +104,7 @@ Some of the other scripts require a few more Python libraries to be installed.
 
 Start a copy of R
 	
-	R
+	sudo R
 
 Add libraries
 
