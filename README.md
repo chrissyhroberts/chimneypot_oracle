@@ -41,6 +41,8 @@ Edit wpa supplicant file.
         psk="pw"
 	}
 
+### Set up Pi Lite
+[https://www.raspberrypi-spy.co.uk/2013/09/how-to-setup-the-pi-lite-led-matrix-board/](https://www.raspberrypi-spy.co.uk/2013/09/how-to-setup-the-pi-lite-led-matrix-board/)
 
 ### Step 3 – Enable UART
 Edit the config.txt file using
@@ -72,4 +74,45 @@ To make perl work, need some packages and cpanminus installer
 
 	curl -L https://cpanmin.us | perl - --sudo App::cpanminus
 	sudo cpanm install Device::SerialPort
+	
+
+
+
+Next we need to install the Python serial package :
+
+	sudo apt-get install python-serial
+
+Typing the following command will browse to the Python examples folder :
+
+	cd PiLite/Python_Examples/
+
+Some of the other scripts require a few more Python libraries to be installed.
+
+	sudo apt-get install python-setuptools
+	sudo apt-get install python-pip
+	sudo apt-get install python-requests
+	sudo pip install arrow
+	sudo pip install functools_lru_cache
+	
+#### test the system
+
+	python anytext.py hello, world
+
+
+### install R
+	sudo apt-get install r-base
+
+Start a copy of R
+	
+	R
+
+Add libraries
+
+	install.packages("devtools")
+	devtools::install_github("DataWookie/feedeR")
+
+Quit R
+	
+	q()
+	
 	
