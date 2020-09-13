@@ -11,6 +11,6 @@ message("Sending git pull request")
 system("git pull")
 
 #light the lights
-system ("")
+system ("sh lights_on")
 message("Running Aggregator")
 source("R_news_aggregator.R")
