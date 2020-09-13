@@ -1,5 +1,13 @@
 # chimneypot_oracle
 
+### The chimneypot oracle is an RSS feed reader originally designed as part of a diorama scene for a Christmas present. 
+
+The system uses a raspberry Pi a the now probably obsolete PiLite LED matrix to produce a scrolling marquee sign. 
+
+The current version combines a generic python script (which runs the sign) with a copy of R, which acts as a feed aggregator through the package *feedeR* 
+
+##Instructions to set up 
+
 * Create a new image of Raspbian and burn to SD card
 * Turn on RPI, with a keyboard connected
 
@@ -123,4 +131,23 @@ Quit R
 	
 	q()
 	
+	
+## Instructions to add more feeds
+
+The R script has a chunk which starts `getnews <- function()`
+
+Each following line adds a feed to the bottom of the data table. 
+
+so to add a new line, just paste this below the last current line
+
+`a<-c(a,getfeed("http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml"))`
+	
+
+## Scheduling
+
+The system should run at startup, first pulling most recent scripts from github, then running the R script, which then loops until stopped or powerdown.
+
+Using cron is the easiest way to do this
+
+
 	
