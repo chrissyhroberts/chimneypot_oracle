@@ -155,5 +155,7 @@ Using cron is the easiest way to do this
 example crontab
 
 
+	@reboot cd /home/pi/chimneypot_oracle > /home/pi/chimneypot_oracle/cd.log 2>&1 && Rscript R_Master_Control_Script.R > /home/pi/chimneypot_oracle/R.log 2>&1
+
 	
 	
