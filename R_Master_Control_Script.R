@@ -18,6 +18,7 @@ getweather <-function()
   {
   a<-getfeed("https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/2643490")
   a<-sample(a,1)
+  a<-gsub(a,pattern = "°",replacement = " ")
   for(i in 1:length(a)){system(paste("python anytext.py '",a[1],"'",sep=""))}
   }
 
@@ -28,6 +29,7 @@ gettime <-function()
 
   system(paste("python anytext.py '",a[1],"'",sep=""))
 }
+
 
 
 # define a function to aggregate a bunch of news feeds, randomise the order and spew them out 10 at a time

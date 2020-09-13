@@ -142,6 +142,9 @@ so to add a new line, just paste this below the last current line
 
 `a<-c(a,getfeed("http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml"))`
 	
+## Make the GPIO pins work
+	sudo apt-get install wiringpi
+
 
 ## Scheduling
 
@@ -149,5 +152,8 @@ The system should run at startup, first pulling most recent scripts from github,
 
 Using cron is the easiest way to do this
 
+example crontab
 
+
+	
 	
