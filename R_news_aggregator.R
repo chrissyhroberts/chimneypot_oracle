@@ -79,6 +79,14 @@ mes1<-
     printnews()
     printnews()
     printnews()
-  }
+    gettime()
+    printnews()
+    printnews()
+    printnews()
+    gettime()
+    printnews()
+    printnews()
+    printnews()
+      }
 
 #test
