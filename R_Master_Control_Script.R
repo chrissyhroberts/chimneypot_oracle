@@ -44,23 +44,36 @@ a<-c(a,getfeed("http://feeds.bbci.co.uk/news/education/rss.xml"))
 a<-c(a,getfeed("http://feeds.bbci.co.uk/news/health/rss.xml"))
 a<-c(a,getfeed("http://feeds.bbci.co.uk/news/politics/rss.xml"))
 a<-c(a,getfeed("http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml"))
+return(a)
+}
 
-a <- sample(a,size = 3)
-return (a)
+todaysnews<-getnews()
+
+printnews<-function()
+{
+aa<-sample(todaysnews,size = 1)
 system(paste("python anytext.py '",a[1],"'",sep=""))
 }
+
+
 
 b=1
 
 
+#define any text
+printthis<-function(message){system(paste("python anytext.py ",message,sep=""))}
 #MAIN
 
-system(paste("python anytext.py `Chimneypot Oracle 2!`",sep=""))
+printthis("The_Chimneypot_Oracle_Speaks_AGAIN!!")
+printthis("Updating_the_news...Please_wait...")
 
 
+mes1<-
 while(b==1)
 {
 gettime()
 getweather()
-getnews()
+printnews()
+printnews()
+printnews()
 }
