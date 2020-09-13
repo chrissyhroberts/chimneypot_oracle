@@ -23,7 +23,8 @@ getweather <-function()
 # define a function that gets the weather and prints to Rpi
 gettime <-function()
 {
-  a<-Sys.time()
+  a<-format(Sys.time(), "%a %b %d, %Y - %X")
+
   system(paste("python anytext.py '",a[1],"'",sep=""))
 }
 
@@ -33,7 +34,7 @@ gettime <-function()
 getnews <- function()
 {
 a<-c(a,getfeed("http://journal.r-project.org/rss.atom"))
-a <- sample(a,size = 10)
+a <- sample(a,size = 3)
 system(paste("python anytext.py '",a[1],"'",sep=""))
 }
 
