@@ -64,6 +64,7 @@ aa<-sample(todaysnews,size = 1)
 system(paste("python anytext.py '",a[1],"'",sep=""))
 }
 
+printthis("Updating_the_news...Please_wait...")
 
 
 b=1
