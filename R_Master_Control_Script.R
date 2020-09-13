@@ -17,14 +17,14 @@ getfeed<-function(url)
 getweather <-function()
   {
   a<-getfeed("https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/2643490")
-  for(i in 1:length(a)){system(paste("python anytext.pl '",a[1],"'",sep=""))}
+  for(i in 1:length(a)){system(paste("python anytext.py '",a[1],"'",sep=""))}
   }
 
 # define a function that gets the weather and prints to Rpi
 gettime <-function()
 {
   a<-Sys.time()
-  system(paste("python anytext.pl '",a[1],"'",sep=""))
+  system(paste("python anytext.py '",a[1],"'",sep=""))
 }
 
 
@@ -34,7 +34,7 @@ getnews <- function()
 {
 a<-c(a,getfeed("http://journal.r-project.org/rss.atom"))
 a <- sample(a,size = 10)
-system(paste("python anytext.pl '",a[1],"'",sep=""))
+system(paste("python anytext.py '",a[1],"'",sep=""))
 }
 
 b=1

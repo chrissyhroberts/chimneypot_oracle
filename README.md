@@ -95,6 +95,7 @@ Some of the other scripts require a few more Python libraries to be installed.
 	sudo pip install functools_lru_cache
 	
 #### test the system
+copy the 
 
 	python anytext.py hello, world
 
