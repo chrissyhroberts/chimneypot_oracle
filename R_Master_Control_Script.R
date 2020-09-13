@@ -10,4 +10,5 @@ while(curl::has_internet()==FALSE){}
 message("Sending git pull request")
 system("git pull")
 
+message("Running Aggregator")
 source("R_news_aggregator.R")
