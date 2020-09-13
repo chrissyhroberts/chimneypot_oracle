@@ -51,6 +51,13 @@ system(paste("python anytext.py '",a[1],"'",sep=""))
 }
 
 b=1
+
+
+#MAIN
+
+system(paste("python anytext.py `Chimneypot Oracle 2!`",sep=""))
+
+
 while(b==1)
 {
 gettime()
