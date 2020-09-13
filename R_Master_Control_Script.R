@@ -66,7 +66,9 @@ system(paste("python anytext.py '",aa[1],"'",sep=""))
 
 printthis("Updating_the_news...Please_wait...")
 
-
+#update the scripts for next
+message("Sending git pull request")
+system("git pull")
 b=1
 
 j=1
