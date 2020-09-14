@@ -73,20 +73,20 @@ mes1<-
       j=1
     }
     j=j+1
-    print(j)
-    gettime()
-    getweather()
-    printnews()
-    printnews()
-    printnews()
-    gettime()
-    printnews()
-    printnews()
-    printnews()
-    gettime()
-    printnews()
-    printnews()
-    printnews()
+    try(	print(j))
+    try(    gettime())
+    try(    getweather())
+    try(    printnews())
+    try(    printnews())
+    try(    printnews())
+    try(    gettime())
+    try(    printnews())
+    try(    printnews())
+    try(    printnews())
+    try(    gettime())
+    try(    printnews())
+    try(    printnews())
+    try(    printnews())
       }
 
 #test
