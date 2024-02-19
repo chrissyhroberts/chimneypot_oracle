@@ -33,11 +33,10 @@ getweather <- function() {
 }
 
 # define a function that gets the weather and prints to Rpi
-gettime <-function()
-{
-  a<-format(Sys.time(), "%a %b %d, %Y - %H:%M")
-
-  system(paste("python anytext.py '",a[1],"'",sep=""))
+gettime <- function() {
+  a <- format(Sys.time(), "%a %b %d, %Y - %H:%M")
+  safe_a <- shQuote(a) # Correctly quote the entire string
+  system(paste("python anytext.py", safe_a))
 }
 
 
@@ -65,10 +64,10 @@ getnews <- function()
 
 todaysnews<-getnews()
 
-printnews<-function()
-{
-  aa<-sample(todaysnews,size = 1)
-  system(paste("python anytext.py '",aa[1],"'",sep=""))
+printnews <- function() {
+  aa <- sample(todaysnews, size = 1)
+  safe_aa <- shQuote(aa[1]) # Ensure the string is safely quoted
+  system(paste("python anytext.py", safe_aa))
 }
 
 printthis("Updating_the_news...Please_wait...")
