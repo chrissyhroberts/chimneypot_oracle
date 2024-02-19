@@ -40,14 +40,20 @@ gettime <-function()
 
 getnews <- function()
 {
-  a<-c(getfeed("http://news.bbc.co.uk/rss/on_this_day/front_page/rss.xml"))
-  a<-c(a,getfeed("http://feeds.bbci.co.uk/news/video_and_audio/news_front_page/rss.xml?edition=uk#"))
+  a<-c(getfeed("https://feeds.bbci.co.uk/news/rss.xml"))
   a<-c(a,getfeed("http://feeds.bbci.co.uk/news/world/rss.xml"))
-  a<-c(a,getfeed("http://feeds.bbci.co.uk/news/science_and_environment/rss.xml#"))
+  a<-c(a,getfeed("http://feeds.bbci.co.uk/news/uk/rss.xml"))
+  a<-c(a,getfeed("http://feeds.bbci.co.uk/news/business/rss.xml"))
   a<-c(a,getfeed("http://feeds.bbci.co.uk/news/education/rss.xml"))
   a<-c(a,getfeed("http://feeds.bbci.co.uk/news/health/rss.xml"))
   a<-c(a,getfeed("http://feeds.bbci.co.uk/news/politics/rss.xml"))
   a<-c(a,getfeed("http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml"))
+  a<-c(a,getfeed("https://skyandtelescope.com/astronomy-news/feed/"))
+  a<-c(a,getfeed("https://skyandtelescope.com/astronomy-news/observing-news/feed/"))
+  a<-c(a,getfeed("https://www.nasa.gov/news-release/feed/"))
+  a<-c(a,getfeed("https://www.nasa.gov/news-release/feed/"))
+  
+  
   return(a)
 }
 
