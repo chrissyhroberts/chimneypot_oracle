@@ -1,7 +1,11 @@
 library(feedeR)
 
 #define any text
-printthis<-function(message){system(paste("python anytext.py ",message,sep=""))}
+printthis <- function(message) {
+  safe_message <- shQuote(message)
+  system(paste("python anytext.py", safe_message))
+}
+
 #MAIN
 
 printthis("The_Chimneypot_Oracle_Speaks_AGAIN!!")
@@ -18,12 +22,14 @@ getfeed<-function(url)
 
 
 # define a function that gets the weather and prints to Rpi
-getweather <-function()
-{
-  a<-getfeed("https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/2643490")
-  a<-sample(a,1)
-  a<-gsub(a,pattern = "°",replacement = " ")
-  for(i in 1:length(a)){system(paste("python anytext.py '",a[1],"'",sep=""))}
+getweather <- function() {
+  a <- getfeed("https://weather-broker-cdn.api.bbci.co.uk/en/forecast/rss/3day/2643490")
+  a <- sample(a, 1)
+  a <- gsub(a, pattern = "°", replacement = " ")
+  for(i in 1:length(a)) {
+    safe_a <- shQuote(a[i])
+    system(paste("python anytext.py", safe_a))
+  }
 }
 
 # define a function that gets the weather and prints to Rpi
